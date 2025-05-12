@@ -1,0 +1,21 @@
+{
+  "short_name": "RISCify",
+  "name": "In-browser RISC-V disassembler",
+  "description": "In-browser RISC-V disassembler",
+  "icons": [
+    {
+      "src": "favicon-light.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "favicon-dark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
