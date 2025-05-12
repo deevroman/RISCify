@@ -523,6 +523,7 @@ const App = () => {
     const handler = (e: ClipboardEvent) => {
       if (e.clipboardData) {
         setSourceCode(e.clipboardData.getData("text"));
+        window.history.replaceState({}, '', "?text=" + btoa(e.clipboardData.getData("text")));
       }
     };
 
@@ -531,6 +532,14 @@ const App = () => {
     return () => {
       document.removeEventListener("paste", handler);
     };
+  }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const encodedInitialDump = params.get("text");
+    if (encodedInitialDump !== null) {
+        setSourceCode(atob(encodedInitialDump));
+    }
   }, []);
 
   return (
